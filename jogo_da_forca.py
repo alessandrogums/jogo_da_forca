@@ -6,11 +6,15 @@ def jogo_da_forca():
     palavras = []
     for palavra in arquivo:
         palavras.append(palavra.strip())
+        
+    arquivo.close()
+    
     palavra_original = palavra = random.choice(palavras)
     modificador = ''
     lista_palavra_original = []
     lista_palavra = []
     tentativas = 5
+    
     for k in range(len(palavra)):
         if palavra[k] != ' ':
             modificador = palavra.replace(palavra[k], '_')
