@@ -50,7 +50,7 @@ def jogo_da_forca():
 
         if tentativas == 0:
             print('você gastou todas suas tentativas')
-            print(f'a palavra era {palavra_original}')
+            print(f'a palavra era {palavra_original.upper()} !!')
             print('FIM DO JOGO!')
             break
 
