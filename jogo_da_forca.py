@@ -22,7 +22,7 @@ def jogo_da_forca():
     print('....')
     time.sleep(2)
     print(f'O jogo da forca sorteou esta palavra:{palavra_oculta}, a qual possui {len(palavra_oculta)} letras '
-          f'\ncaso você não acerte a letra correta inclusa nesta palavra, você tem 5 tentativas, se usar todas, PERDE!')
+          f'\ncaso você não acerte a letra correta inclusa nesta palavra, você tem 7 tentativas, se usar todas, PERDE!')
 
     while lista_palavra_oculta.count('_') != 0:
         letra = str(input('digite SOMENTE uma letra para ver se ela está na palavra:')).strip().lower()[0]
