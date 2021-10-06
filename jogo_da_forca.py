@@ -8,7 +8,7 @@ def jogo_da_forca():
     palavra_oculta = lista_palavras[1]
     lista_palavra_original = []
     lista_palavra_oculta = []
-    tentativas = 5
+    tentativas = 7
 
     for letras in palavra_oculta:
         lista_palavra_oculta.append(letras)
@@ -44,14 +44,14 @@ def jogo_da_forca():
         else:
             tentativas -= 1
             print(f'você não acertou a letra,portanto agora voce só tem {tentativas} tentativas')
+            desenha_forca(tentativas)
 
         if lista_palavra_oculta.count('_') == 0:
-            print('PARABÉNSSSS, VOCÊ ACERTOU A PALAVRA!!')
+            imprime_mensagem_vencedor()
 
         if tentativas == 0:
-            print('você gastou todas suas tentativas')
-            print(f'a palavra era {palavra_original.upper()} !!')
-            print('FIM DO JOGO!')
+            imprime_mensagem_perdedor(palavra_original.upper())
+
             break
 
 
@@ -80,6 +80,92 @@ def ocultar_palavra():
         palavra_oculta = modificador
     lista_palavras = [palavra_original, palavra_oculta]
     return lista_palavras
+
+
+def desenha_forca(tentativas):
+    print("  _______     ")
+    print(" |/      |    ")
+
+    if tentativas == 1:
+        print(" |      (_)   ")
+        print(" |            ")
+        print(" |            ")
+        print(" |            ")
+
+    elif tentativas == 2:
+        print(" |      (_)   ")
+        print(" |      \     ")
+        print(" |            ")
+        print(" |            ")
+
+    elif tentativas == 3:
+        print(" |      (_)   ")
+        print(" |      \|    ")
+        print(" |            ")
+        print(" |            ")
+
+    elif tentativas == 4:
+        print(" |      (_)   ")
+        print(" |      \|/   ")
+        print(" |            ")
+        print(" |            ")
+
+    elif tentativas == 5:
+        print(" |      (_)   ")
+        print(" |      \|/   ")
+        print(" |       |    ")
+        print(" |            ")
+
+    elif tentativas == 6:
+        print(" |      (_)   ")
+        print(" |      \|/   ")
+        print(" |       |    ")
+        print(" |      /     ")
+
+    elif tentativas == 7:
+        print(' |      (_)   ')
+        print(" |      \|/   ")
+        print(" |       |    ")
+        print(" |      / \   ")
+
+    print(" |            ")
+    print("_|___         ")
+    print()
+
+
+def imprime_mensagem_vencedor():
+    print("Parabéns, você ganhou!")
+    print("       ___________      ")
+    print("      '._==_==_=_.'     ")
+    print("      .-\\:      /-.    ")
+    print("     | (|:.     |) |    ")
+    print("      '-|:.     |-'     ")
+    print("        \\::.    /      ")
+    print("         '::. .'        ")
+    print("           ) (          ")
+    print("         _.' '._        ")
+    print("        '-------'       ")
+
+
+def imprime_mensagem_perdedor(palavra):
+    print("Puxa, você foi enforcado!")
+    print(f"A palavra era {palavra}")
+    print("    _______________         ")
+    print("   /               \       ")
+    print("  /                 \      ")
+    print("//                   \/\  ")
+    print("\|   XXXX     XXXX   | /   ")
+    print(" |   XXXX     XXXX   |/     ")
+    print(" |   XXX       XXX   |      ")
+    print(" |                   |      ")
+    print(" \__      XXX      __/     ")
+    print("   |\     XXX     /|       ")
+    print("   | |           | |        ")
+    print("   | I I I I I I I |        ")
+    print("   |  I I I I I I  |        ")
+    print("   \_             _/       ")
+    print("     \_         _/         ")
+    print("       \_______/           ")
 
 
 jogo_da_forca()
